@@ -8,7 +8,7 @@ Esta librearía de referencia desarrollada por Bancard permite recolectar la inf
 <b>Pasos para realizar la integración</b>
 
 1. Incluir `bancard-checkout.js`
-2. Setear clave pública en el evento de onload
+2. Iniciar contenedor en evento de onload
 
 
 ## Incluir bancard-checkout.js
@@ -18,9 +18,11 @@ Para utilizar la librearía de bancard-checkout se debe incluir la misma y setea
 <script src="bancard-checkout.js"></script>
 ```
 
-## Setear clave pública en el evento de onload y estilos
-Es necesario que en el momento de cargar la página se invoque a la funcin `createCheckoutForm` indicando el id del contenedor, clave pública y estilos asociados al elemento embebido.
+## Iniciar contenedor en evento de onload y estilos
+Es necesario que en el momento de cargar la página (onload) se invoque a la función `createCheckoutForm` indicando el id del contenedor, clave pública y estilos asociados al elemento embebido.
 
+<b>Ejemplo de invocación </b>
+   
 ```javascript
    window.onload = function() {
       BancardCheckout.createCheckoutForm('iframe-container', '[PUBLIC_KEY]', styles);
