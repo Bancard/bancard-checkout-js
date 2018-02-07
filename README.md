@@ -19,7 +19,9 @@ Para utilizar la librearía de bancard-checkout se debe incluir la misma y setea
 ```
 
 ## Iniciar contenedor en evento de onload y estilos
-Es necesario que en el momento de cargar la página (onload) se invoque a la función `createCheckoutForm` indicando el id del contenedor, clave pública y estilos asociados al elemento embebido.
+Es necesario que en el momento de cargar la página (onload) se invoque a la función `createCheckoutForm` indicando el id del contenedor, process_id y estilos asociados al elemento embebido.
+
+El [PROCESS_ID] es el hash resultado de haber invocado a la operacin `single_buy` de la API de vPOS.
 
 <b>Ejemplo de invocación </b>
    
