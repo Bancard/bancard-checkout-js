@@ -25,7 +25,7 @@ Es necesario que en el momento de cargar la página (onload) se invoque a la fun
    
 ```javascript
    window.onload = function() {
-      BancardCheckout.createCheckoutForm('iframe-container', '[PUBLIC_KEY]', styles);
+      BancardCheckout.createForm('iframe-container', '[PROCESS_ID]', styles);
    };
 ```
 
