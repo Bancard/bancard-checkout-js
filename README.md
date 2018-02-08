@@ -167,9 +167,9 @@ Ejemplo:
 
 ## Acceder al código fuente o builds de la librería
 Puedes ver el código fuente de la librería y aportar con comentarios, Pull requests o directamente ver como está implementada.
-Para acceder a este proyecto puedes ir directamente a: https://github.com/Bancard/bancard-connectors/tree/develop/vpos/checkout/javascript
+Para acceder a este proyecto puedes ir directamente a: [bancard-connectors](https://github.com/Bancard/bancard-connectors/tree/develop/vpos/checkout/javascript)
 
-Si quieres acceder al build de esta librería puedes hacerlo desde: https://github.com/Bancard/bancard-checkout-js/tree/master/build
+Si quieres acceder al build de esta librería puedes hacerlo desde: [Carpeta de builds](https://github.com/Bancard/bancard-checkout-js/tree/master/build)
 
 Ej. [bancard-checkout-1.0.0.js](build/bancard-checkout-1.0.0.js)
 
