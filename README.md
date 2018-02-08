@@ -162,6 +162,7 @@ Ejemplo:
 </html>
 ```
 
+![iFrame](iFrame.png)
 
 
 ## Acceder al código fuente o builds de la librería
