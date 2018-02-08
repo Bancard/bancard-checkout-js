@@ -120,7 +120,7 @@ Ejemplo:
 ```javascript
 <html>
   <head>
-    <script src="https://desa.infonet.com.py:8085/checkout/javascript/dist/bancard-checkout-1.0.0.js"></script>
+    <script src="bancard-checkout-1.0.0.js"></script>
   </head>
 
   <script type="text/javascript">
@@ -161,6 +161,8 @@ Ejemplo:
   </body>
 </html>
 ```
+
+
 
 ## Acceder al código fuente o builds de la librería
 Puedes ver el código fuente de la librería y aportar con comentarios, Pull requests o directamente ver como está implementada.
