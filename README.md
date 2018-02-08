@@ -171,5 +171,5 @@ Para acceder a este proyecto puedes ir directamente a: https://github.com/Bancar
 
 Si quieres acceder al build de esta librería puedes hacerlo desde: https://github.com/Bancard/bancard-checkout-js/tree/master/build
 
-Ej. ![bancard-checkout-1.0.0.js](build/bancard-checkout-1.0.0.js)
+Ej. [bancard-checkout-1.0.0.js](build/bancard-checkout-1.0.0.js)
 
