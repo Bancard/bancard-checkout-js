@@ -7,7 +7,7 @@ Esta librearía de referencia desarrollada por Bancard permite recolectar la inf
 
 <b>Pasos para realizar la integración</b>
 
-0. Generar un process_id
+0. [Generar un process_id](#Generar-un-process_id)
 1. Incluir `bancard-checkout.js`
 2. Iniciar contenedor en evento de onload
 
