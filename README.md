@@ -11,9 +11,9 @@ Esta librearía de referencia desarrollada por Bancard permite recolectar la inf
 1. Incluir `bancard-checkout.js`
 2. Iniciar contenedor en evento de onload
 
-## Invocar al servicio de single_buy para obtener un process_id válido
+## Generar un process_id
 Como primer paso se debe serguir invocando al servicio de `single_buy` con los parámetros habituales.
-Consultar documentacin en el portal de comercios. El servicio de vpos retornará un process_id válido para realizar la integración con esta librearía.
+Consultar documentacin en el [Portal de comercios](https://comercios.bancard.com.py). El servicio de vpos retornará un process_id válido para realizar la integración con esta librearía.
 
 ## Incluir bancard-checkout.js
 Para utilizar la librearía de bancard-checkout se debe incluir la misma y setear la clave asociada a tu comercio. 
