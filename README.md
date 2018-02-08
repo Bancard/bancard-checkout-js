@@ -27,7 +27,7 @@ El [PROCESS_ID] es el hash resultado de haber invocado a la operacin `single_buy
    
 ```javascript
    window.onload = function() {
-      BancardCheckout.createForm('iframe-container', '[PROCESS_ID]', styles);
+      BancardCheckout.createForm('iframe-container', '[PROCESS_ID]', options);
    };
 ```
 
@@ -92,21 +92,81 @@ Puede modificarse la información de estilos del contenedor con atributros ya de
 Ejemplo:
 
 ```javascript
-      styles = {
-        'input-background-color' : '#453454',
-        'input-text-color': '#B22222',
-        'input-border-color' : '#CCCCCC',
-        'input-placeholder-color' : '#999999',
-        'button-background-color' : '#5CB85C',
-        'button-text-color' : '#FFFFFF',
-        'button-border-color' : '#4CAE4C',
-        'form-background-color' : '#999999',
-        'form-border-color' : '#DDDDDD',
-        'header-background-color' : '#F5F5F5',
-        'header-text-color' : '#333333',
-        'hr-border-color' : '#B22222',
-        'label-kyc-text-color' : '#555555',
+      var styles = {
+        // 'input-background-color' : '#453454',
+        // 'input-text-color': '#B22222',
+        // 'input-border-color' : '#CCCCCC',
+        // 'input-placeholder-color' : '#999999',
+        // 'button-background-color' : '#5CB85C',
+        // 'button-text-color' : '#FFFFFF',
+        // 'button-border-color' : '#4CAE4C',
+        // 'form-background-color' : '#AB97CC',
+        // 'form-border-color' : '#DDDDDD',
+        // 'header-background-color' : '#F5F5F5',
+        // 'header-text-color' : '#333333',
+        // 'hr-border-color' : '#B22222',
+        // 'label-kyc-text-color' : '#555555',
         'header-show' : false,
         'watermark-show' : false
+      };
+
+      options = {
+        styles: styles
       }
 ```
+
+### Ejemplo completo del código HTML y Java Script
+
+```javascript
+<html>
+  <head>
+    <script src="https://desa.infonet.com.py:8085/checkout/javascript/dist/bancard-checkout-1.0.0.js"></script>
+  </head>
+
+  <script type="text/javascript">
+    window.onload = function () {
+
+      var styles = {
+        // 'input-background-color' : '#453454',
+        // 'input-text-color': '#B22222',
+        // 'input-border-color' : '#CCCCCC',
+        // 'input-placeholder-color' : '#999999',
+        // 'button-background-color' : '#5CB85C',
+        // 'button-text-color' : '#FFFFFF',
+        // 'button-border-color' : '#4CAE4C',
+        // 'form-background-color' : '#999999',
+        // 'form-border-color' : '#DDDDDD',
+        // 'header-background-color' : '#F5F5F5',
+        // 'header-text-color' : '#333333',
+        // 'hr-border-color' : '#B22222',
+        // 'label-kyc-text-color' : '#555555',
+        'header-show' : false,
+        'watermark-show' : false
+      };
+
+      options = {
+        styles: styles
+      }
+
+      Bancard.Checkout.createForm('iframe-container', '[PROCESS_ID]', options);
+    };
+  </script>
+
+  <body>
+
+    <h1>iFrame vPos</h1>
+
+    <div style="height: 130px; width: 100%; margin: auto" id="iframe-container"/>
+
+  </body>
+</html>
+```
+
+## Acceder al código fuente o builds de la librería
+Puedes ver el código fuente de la librería y aportar con comentarios, Pull requests o directamente ver como está implementada.
+Para acceder a este proyecto puedes ir directamente a: https://github.com/Bancard/bancard-connectors/tree/develop/vpos/checkout/javascript
+
+Si quieres acceder al build de esta librería puedes hacerlo desde: https://github.com/Bancard/bancard-checkout-js/tree/master/build
+
+Ej. https://github.com/Bancard/bancard-checkout-js/blob/master/build/bancard-checkout-1.0.0.js
+
