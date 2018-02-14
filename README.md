@@ -1,41 +1,40 @@
 # bancard-checkout-js
-Esta librearía de referencia desarrollada por Bancard permite recolectar la información sensible de una tarjeta de un cliente permitiendo realizar un pago en un sitio del comercio sin salir del mismo. Integra la operacin de `single_buy` de vpos
+Biblioteca de referencia desarrollada por [Bancard](http://www.bancard.com.py/) que permite recolectar la información sensible de una tarjeta para realizar un pago (`single_buy` de vPOS) en un e-commerce sin salir del mismo.
 
-<b>Precondición</b>
+**Precondición**
 
-<i>Como condición para utilizar esta librearía y poder integrar el servicio de vPOS el comercio debe estar registrado y habilitado por Bancard contando con un acceso en el portal de comercios así como acceso al servicio de vPOS.</i>
+_Como precondición para utilizar esta biblioteca y poder integrar el servicio de vPOS, el comercio debe estar registrado y habilitado por Bancard contando con acceso al [Portal de comercios](https://comercios.bancard.com.py) así como acceso al servicio de [vPOS](http://www.bancard.com.py/index.php/vpos/)._
 
-<b>Pasos para realizar la integración</b>
+**Pasos para realizar la integración:**
 
 0. Generar un process_id
 1. Incluir `bancard-checkout.js`
-2. Iniciar contenedor en evento de onload
+2. Inicializar contenedor con código JavaScript
 
 ## 0. Generar un process_id
-Como primer paso se debe serguir invocando al servicio de `single_buy` con los parámetros habituales.
-Consultar documentacin en el [Portal de comercios](https://comercios.bancard.com.py). El servicio de vpos retornará un process_id válido para realizar la integración con esta librearía.
+Como primer paso se debe seguir invocando al servicio de `single_buy` con los parámetros habituales. Por más detalles, consultar documentación en el [Portal de comercios](https://comercios.bancard.com.py). El servicio de vPOS retornará un process_id válido para realizar la integración con esta biblioteca.
 
 ## 1. Incluir bancard-checkout.js
-Para utilizar la librearía de bancard-checkout se debe incluir la misma y setear la clave asociada a tu comercio. 
+Para utilizar la biblioteca _bancard-checkout.js_ se debe incluir la misma utilizando, por ejemplo, el siguiente código:
 
 ```javascript
 <script src="bancard-checkout.js"></script>
 ```
 
-## 2. Iniciar contenedor en evento de onload y estilos
-Es necesario que en el momento de cargar la página (onload) se invoque a la función `createForm` indicando el id del contenedor, process_id y estilos asociados al elemento embebido.
+## 2. Inicializar contenedor con código JavaScript
+Para montar el formulario de pago en el sitio web, se debe ejecutar `Bancard.Checkout.createForm` indicando el id del contenedor, process_id y un conjunto de opciones que incluyen los estilos asociados al elemento embebido.
 
-El [PROCESS_ID] es el hash resultado de haber invocado a la operacin `single_buy` de la API de vPOS.
+El [PROCESS_ID] es el hash resultante de haber invocado a la operación `single_buy` de la API de vPOS.
 
-<b>Ejemplo de invocación </b>
-   
+**Ejemplo de invocación**
+
 ```javascript
    window.onload = function() {
-      BancardCheckout.createForm('iframe-container', '[PROCESS_ID]', options);
+      Bancard.Checkout.createForm('iframe-container', '[PROCESS_ID]', options);
    };
 ```
 
-### Modificar estilos 
+### Modificar estilos
 Puede modificarse la información de estilos del contenedor con atributros ya definidos. La lista completa es:
 
 ```
@@ -97,19 +96,18 @@ Ejemplo:
 
 ```javascript
       var styles = {
-        // 'input-background-color' : '#453454',
-        // 'input-text-color': '#B22222',
-        // 'input-border-color' : '#CCCCCC',
-        // 'input-placeholder-color' : '#999999',
-        // 'button-background-color' : '#5CB85C',
-        // 'button-text-color' : '#FFFFFF',
-        // 'button-border-color' : '#4CAE4C',
-        // 'form-background-color' : '#AB97CC',
-        // 'form-border-color' : '#DDDDDD',
-        // 'header-background-color' : '#F5F5F5',
-        // 'header-text-color' : '#333333',
-        // 'hr-border-color' : '#B22222',
-        // 'label-kyc-text-color' : '#555555',
+        'input-background-color' : '#453454',
+        'input-text-color': '#B22222',
+        'input-border-color' : '#CCCCCC',
+        'input-placeholder-color' : '#999999',
+        'button-background-color' : '#5CB85C',
+        'button-text-color' : '#FFFFFF',
+        'button-border-color' : '#4CAE4C',
+        'form-background-color' : '#AB97CC',
+        'form-border-color' : '#DDDDDD',
+        'header-background-color' : '#F5F5F5',
+        'header-text-color' : '#333333',
+        'hr-border-color' : '#B22222',
         'header-show' : false,
         'watermark-show' : false
       };
@@ -119,7 +117,7 @@ Ejemplo:
       }
 ```
 
-### Ejemplo completo del código HTML y Java Script
+### Ejemplo completo del código HTML y JavaScript
 
 ```javascript
 <html>
@@ -131,19 +129,18 @@ Ejemplo:
     window.onload = function () {
 
       var styles = {
-        // 'input-background-color' : '#453454',
-        // 'input-text-color': '#B22222',
-        // 'input-border-color' : '#CCCCCC',
-        // 'input-placeholder-color' : '#999999',
-        // 'button-background-color' : '#5CB85C',
-        // 'button-text-color' : '#FFFFFF',
-        // 'button-border-color' : '#4CAE4C',
-        // 'form-background-color' : '#999999',
-        // 'form-border-color' : '#DDDDDD',
-        // 'header-background-color' : '#F5F5F5',
-        // 'header-text-color' : '#333333',
-        // 'hr-border-color' : '#B22222',
-        // 'label-kyc-text-color' : '#555555',
+        'input-background-color' : '#453454',
+        'input-text-color': '#B22222',
+        'input-border-color' : '#CCCCCC',
+        'input-placeholder-color' : '#999999',
+        'button-background-color' : '#5CB85C',
+        'button-text-color' : '#FFFFFF',
+        'button-border-color' : '#4CAE4C',
+        'form-background-color' : '#999999',
+        'form-border-color' : '#DDDDDD',
+        'header-background-color' : '#F5F5F5',
+        'header-text-color' : '#333333',
+        'hr-border-color' : '#B22222',
         'header-show' : false,
         'watermark-show' : false
       };
@@ -169,11 +166,11 @@ Ejemplo:
 ![iFrame](iFrame.png)
 
 
-## Acceder al código fuente o builds de la librería
-Puedes ver el código fuente de la librería y aportar con comentarios, Pull requests o directamente ver como está implementada.
-Para acceder a este proyecto puedes ir directamente a: [bancard-connectors](https://github.com/Bancard/bancard-connectors/tree/develop/vpos/checkout/javascript)
+## Acceder al código fuente y builds de la biblioteca
+Puedes ver el código fuente de la biblioteca y aportar con comentarios, pull requests o directamente ver como está implementada.
+Para acceder a este proyecto puedes ir directamente a [bancard-connectors](https://github.com/Bancard/bancard-connectors/tree/develop/vpos/checkout/javascript)
 
-Si quieres acceder al build de esta librería puedes hacerlo desde: [Carpeta de builds](https://github.com/Bancard/bancard-checkout-js/tree/master/build)
+Si quieres acceder a los builds de esta biblioteca puedes hacerlo desde la [carpeta de builds](https://github.com/Bancard/bancard-checkout-js/tree/master/build)
 
 Ej. [bancard-checkout-1.0.0.js](build/bancard-checkout-1.0.0.js)
 
