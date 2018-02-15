@@ -1,5 +1,5 @@
 # bancard-checkout-js
-Biblioteca de referencia desarrollada por [Bancard](http://www.bancard.com.py/) que permite recolectar la información sensible de una tarjeta para realizar un pago (`single_buy` de vPOS) en un e-commerce sin salir del mismo.
+Biblioteca de referencia desarrollada por [Bancard](http://www.bancard.com.py/) que permite ingresar la información de una tarjeta para realizar un pago (`single_buy` de vPOS) en un e-commerce sin salir del mismo. La información sensible de la tarjeta es ingresada siempre en Bancard, embebido con el look and feel del comercio sin ninguna redirección.
 
 **Precondición**
 
