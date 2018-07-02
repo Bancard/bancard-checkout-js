@@ -72,10 +72,6 @@ Puede modificarse la información de estilos del contenedor con atributros ya de
   text: Color fondo de encabezado
   type: color
   default: '#F5F5F5'
-- name: header-show
-  text: Mostrar encabezado
-  type: boolean
-  default: true
 - name: header-text-color
   text: Color texto de encabezado
   type: color
@@ -104,10 +100,6 @@ Puede modificarse la información de estilos del contenedor con atributros ya de
   text: Color texto de tu-eres-tu
   type: color
   default: '#000000'
-- name: watermark-show
-  text: Mostrar marca de agua
-  type: boolean
-  default: true
 ```
 
 En caso de no indicar un valor para un atributo, será utilizado el atributo configurado en el Portal de Comercios.
@@ -135,9 +127,7 @@ En caso de no indicar un valor para un atributo, será utilizado el atributo con
         'form-border-color' : '#DDDDDD',
         'header-background-color' : '#F5F5F5',
         'header-text-color' : '#333333',
-        'hr-border-color' : '#B22222',
-        'header-show' : false,
-        'watermark-show' : false
+        'hr-border-color' : '#B22222'
       };
 
       options = {
