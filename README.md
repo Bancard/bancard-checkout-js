@@ -7,12 +7,16 @@ _Como precondición para utilizar esta biblioteca y poder integrar el servicio d
 
 ## Pasos para realizar la integración
 
-0. Generar un process_id
+0. Generar un process_id o alias_token válido
 1. Incluir `bancard-checkout.js`
 2. Inicializar contenedor con código JavaScript
 
-### 0. Generar un process_id
-Como primer paso se debe invocar al servicio `create_single_buy` o `create_new_card_request` para realizar un pago o catastrar una tarjeta respectivamente. Por más detalles, consultar documentación en el [Portal de comercios](https://comercios.bancard.com.py). El servicio de vPOS retornará un process_id válido para realizar la integración con esta biblioteca.
+### 0. Generar un process_id o alias_token válido
+0. Process_id: Como primer paso se debe invocar al servicio `create_single_buy` o `create_new_card_request` para realizar un pago o catastrar una tarjeta respectivamente. El servicio de vPOS retornará un process_id válido para realizar la integración con esta biblioteca.
+
+1. Alias_token: Al consumir la operación de pago con alias token, y tratarse de una tarjeta de débito, el servicio devolverá que el pago necesita confirmación por parte del cliente, el cual deberá ingresar su PIN. Una vez consumida dicha operación, el alias_token será válido para poder realizar la integración con la bibloteca.
+
+Por más detalles, consultar documentación en el [Portal de comercios](https://comercios.bancard.com.py).
 
 ### 1. Incluir bancard-checkout.js
 Para utilizar la biblioteca _bancard-checkout.js_ se debe incluir la misma utilizando, por ejemplo, el siguiente código:
@@ -22,11 +26,15 @@ Para utilizar la biblioteca _bancard-checkout.js_ se debe incluir la misma utili
 ```
 
 ### 2. Inicializar contenedor con código JavaScript
-Para montar el formulario de pago o catastro en el sitio web, se debe ejecutar `Bancard.Checkout.createForm` o `Bancard.Cards.createForm`, según sea un pago o un catastro, indicando el id del contenedor, process_id y un conjunto de opciones que incluyen los estilos asociados al elemento embebido.
+Para montar el formulario de pago o catastro en el sitio web, se debe ejecutar `Bancard.Checkout.createForm` o `Bancard.Cards.createForm`, según sea un pago o un catastro, indicando el id del contenedor, process_id y un conjunto de opciones que incluyen los estilos asociados al elemento embebido. En el caso de querer montar el PIN pad para confirmar un pago con alias token, se debe ejecutar `Bancard.Confirmation.loadPinPad`, indicando el id del contenedor, el alias_token y las opciones de configuración elegidas.
 
 El [PROCESS_ID] es el hash resultante de haber invocado a la operación de la API de vPOS.
 
-Nota: La opción de catastro de tarjeta es soportada a partir de la versión 2.0.0
+El [ALIAS_TOKEN] es el hash que identifica a una tarjeta obtenida a través de la operación de listar tarjetas de un usuario de la API de vPOS .
+
+Nota:
+* La opción de catastro de tarjeta es soportada a partir de la versión 2.0.0.
+* La opción de confirmación es soportada a partir de la versión 2.1.0.
 
 **Ejemplo de invocación**
 
@@ -41,6 +49,13 @@ Catastro:
 ```javascript
    window.onload = function() {
       Bancard.Cards.createForm('iframe-container', '[PROCESS_ID]', options);
+   };
+```
+
+Confirmación:
+```javascript
+   window.onload = function() {
+      Bancard.Confirmation.loadPinPad('iframe-container', '[ALIAS_TOKEN]', options);
    };
 ```
 
