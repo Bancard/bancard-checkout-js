@@ -58,6 +58,12 @@ Confirmación:
       Bancard.Confirmation.loadPinPad('iframe-container', '[ALIAS_TOKEN]', options);
    };
 ```
+Preautorización:
+```javascript
+   window.onload = function() {
+      Bancard.Preauthorization.createForm('iframe-container', '[PROCESS_ID]', options);
+   };
+```
 
 ### Modificar estilos
 Puede modificarse la información de estilos del contenedor con atributros ya definidos. La lista completa es:
